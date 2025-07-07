@@ -1,0 +1,74 @@
+Windows
+================
+type(HOST),isMonitoringCandidate("false"),OsType("WINDOWS"),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+Linux
+=================
+type(HOST),isMonitoringCandidate("false"),OsType("LINUX"),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+Aix
+===================
+type(HOST),isMonitoringCandidate("false"),OsType("AIX"),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+Remote Unix
+==================
+type(remote_unix:host),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+SQL Instances
+==================
+type(sql:sql_server_instance),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+Hyper-V
+=================
+type(hyperv:host),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+SNMP Traps
+=================
+type(snmptraps:com_dynatrace_ext_snmp-traps),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+
+Ping
+==============
+Rule Type => Monitored Entity
+Rule Applies to => Third-party monitors (Synthetic nonoitor)
+Add Condition =>
+Property = Third - party monitor engine name
+Operator = equals
+Value = Ping
+
+VMware vCenter
+======================
+type(vmware:vcenter),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+VMware Esxi Hosts
+=======================
+type(vmware:host),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+VMware Clusters
+=======================
+type(vmware:cluster),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+VMware DataCenter
+========================
+type(vmware:datacenter),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+VMware VMs
+=========================
+type(vmware:virtualmachine),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+VMware DataStores
+=============================
+type(vmware:datastore),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+
+NetBackup
+=====================
+type("dt.entity.python:com_dynatrace_extension_veritas_netbackup"),not(tag(CIStatus:InDisposition,CIStatus:Retired))
+
+
+
+If you want to apply tag for selected servers
+=====================================================
+type(host), not(tag(CIStatus:InDisposition, CIStatus:Retired)), entityName.in("LPV-CA4KAPP01.CO.IHC.COM", "HPV-FCDBCFG1-01.CO.IHC.COM", "TN-ENTSQLDVN01.CO.IHC.COM")
+ 
+
